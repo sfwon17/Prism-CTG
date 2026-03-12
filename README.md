@@ -1,5 +1,12 @@
 # PRISM-CTG
 Traditional deep learning models for CTG analysis are often trained on limited patient cohorts or narrowly curated datasets, which constraints their potential performance. In this study, we introduce the first Foundation Model: PRISM-CTG, pre-trained with a multi-view self-supervised learning framework, specifically designed for CTG domain that incorporates clinical and patient context during pretraining. 
+
+## Overview
+This repositary provide the code for pretraining PRISM-CTG with multi-view self-supervised learning framework. We use CTU-UHB as pretraining example. Please replace the data with your institutions' data for pretraining. 
+
+## Usage
+<pre> ```bash python run_pretraining.py ``` </pre>
+
 ## Dataset
 ### Pretraining
 **Oxford Maternal Databasse (Oxmat)**: Unavailable due to privacy and ethical reason. Individual requests for access may be considered on a case-by-case basis, subject to institutional approval. Please contact gabriel.jones@wrh.ox.ac.uk.
