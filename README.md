@@ -4,6 +4,9 @@ Traditional deep learning models for CTG analysis are often trained on limited p
 ## Overview
 This repositary provide the code for pretraining PRISM-CTG with multi-view self-supervised learning framework. We use CTU-UHB as pretraining example. Please replace the data with your institutions' data for pretraining. 
 
+## PRISM-CTG learns meaningful CTG representation without linear-probing or fine-tuning
+
+
 ## Usage
 ### Pre-training
 ```
