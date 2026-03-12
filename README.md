@@ -1,4 +1,4 @@
-# Prism-CTG 
+# PRISM-CTG
 
 ## Dataset
 ### Pretraining
