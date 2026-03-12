@@ -6,7 +6,7 @@ This repositary provide the code for pretraining PRISM-CTG with multi-view self-
 
 ## PRISM-CTG learns meaningful CTG representation
 2D-PCA visualisation on Task 4 showed meaningful representation based on the encoder representation alone, without additional linear-probing on the downstream dataset. 
-![PRISM-CTG learns meaningful CTG representation](pca.pdf)
+![PRISM-CTG learns meaningful CTG representation](PCA.png)
 ## Usage
 ### Pre-training
 ```
