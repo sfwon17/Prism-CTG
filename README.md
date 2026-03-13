@@ -12,6 +12,29 @@ This repositary provide the code for pretraining PRISM-CTG with multi-view self-
 </p>
 
 ## Usage
+### Pre-training Input
+
+A single `.npz` file containing:
+
+| Key              | Shape        | Description              |
+|------------------|--------------|--------------------------|
+| `fhr_segments`   | `[N, 1200]`  | Fetal heart rate signal  |
+| `toco_segments`  | `[N, 1200]`  | Tocodynamometer signal   |
+| `gest_age`       | `[N]`         | Gestational age          |
+| `maternal_age`   | `[N]`         | Maternal age             |
+| `time_to_birth`  | `[N]`         | Time to birth            |
+
+### Linear Probing Input
+
+A directory containing:
+
+| File            | Shape           | Description                                           |
+|-----------------|-----------------|-------------------------------------------------------|
+| `X_train.npy`   | `[N, 2, 1200]`  | Training signals (channel 0 = FHR, channel 1 = TOCO) |
+| `y_train.npy`   | `[N]`            | Training labels                                      |
+| `X_test.npy`    | `[N, 2, 1200]`  | Test signals                                         |
+| `y_test.npy`    | `[N]`            | Test labels                                          |
+
 ### Pre-training
 ```
 python run_pretraining.py --data_path /your_data/data.npz 
