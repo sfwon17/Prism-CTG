@@ -14,7 +14,7 @@ This repositary provide the code for pretraining PRISM-CTG with multi-view self-
 ## Usage
 ### Pre-training
 ```
-python run_pretraining.py --data_path /path/to/your/data.npz 
+python run_pretraining.py --data_path /your_data/data.npz 
 ```
 
 ### Linear-probing
