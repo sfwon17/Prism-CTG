@@ -56,7 +56,7 @@ python run_linear_probing.py
 
 **CTU-UHB**: https://archive.physionet.org/pn3/ctu-uhb-ctgdb/HEADER.shtml
 
-**Assistance Publique Hôpitaux de Paris (APHP)**: The APHP dataset is expected to be made publicly available in 2026, subject to final administrative approval. A link to the official database will be added upon release.
+**APHP-CTG**: The APHP-CTG dataset is expected to be made publicly available in 2026, subject to final administrative approval. A link to the official database will be added upon release.
 
 ## Notes
 The original research code has been cleaned and simplified to improve readability and reduce implementation complexity. The complete version of the research code can be made available upon request.
