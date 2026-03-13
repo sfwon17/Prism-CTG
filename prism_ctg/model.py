@@ -33,7 +33,7 @@ class PRISMCTG(nn.Module):
 
     CLS tokens:
         - cls_recon: drives patch reconstruction (cross-attention in decoder).
-        - cls_var:   predicts clinical variables.
+        - cls_var:   predicts maternal variables (gestational age, maternal age, time to birth).
         - cls_feature: predicts per-patch feature labels (cross-attention to patches).
 
     During encoding, CLS tokens are isolated from each other via an attention
