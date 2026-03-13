@@ -1,10 +1,17 @@
+"""
+PRISM-CTG Pre-training
 
-# The .npz file should contain:
-#     - fhr_segments:   [N, seq_len]   FHR signal segments
-#     - toco_segments:  [N, seq_len]   TOCO signal segments
-#     - ctg_gest:       [N]            Gestational age (raw, will be normalised)
-#     - ctg_diff:       [N]            Cervical dilation (raw, will be normalised)
-#     - ox_gravida:     [N]            Gravida / parity (raw, will be normalised)
+Usage:
+    cd training/
+    python run_pretraining.py --data_path /path/to/data.npz --save_dir /path/to/checkpoints
+
+The .npz file should contain:
+    - fhr_segments:   [N, seq_len]   FHR signal segments
+    - toco_segments:  [N, seq_len]   TOCO signal segments
+    - gest_age:        [N]            Gestational age (raw, will be normalised)
+    - maternal_age:    [N]            Maternal age (raw, will be normalised)
+    - time_to_birth:   [N]            Time to birth (raw, will be normalised)
+"""
 
 import argparse
 import os
@@ -42,19 +49,19 @@ def load_data(data_path):
 
     fhr_segments = data["fhr_segments"].astype(np.float32)
     toco_segments = data["toco_segments"].astype(np.float32)
-    ctg_gest = normalise_clinical_var(data["ctg_gest"])
-    ctg_diff = normalise_clinical_var(data["ctg_diff"])
-    ox_gravida = normalise_clinical_var(data["ox_gravida"])
+    gest_age = normalise_clinical_var(data["gest_age"])
+    maternal_age = normalise_clinical_var(data["maternal_age"])
+    time_to_birth = normalise_clinical_var(data["time_to_birth"])
 
     # [N, 2, seq_len]
     ctg_signal = np.stack([fhr_segments, toco_segments], axis=1)
     # [N, 3]
-    clinical_vars = np.stack([ctg_gest, ctg_diff, ox_gravida], axis=1)
+    clinical_vars = np.stack([gest_age, maternal_age, time_to_birth], axis=1)
 
     print(f"Loaded {ctg_signal.shape[0]} samples, signal shape {ctg_signal.shape[1:]}")
-    print(f"Clinical vars — ctg_gest: [{ctg_gest.min():.2f}, {ctg_gest.max():.2f}], "
-          f"ctg_diff: [{ctg_diff.min():.2f}, {ctg_diff.max():.2f}], "
-          f"ox_gravida: [{ox_gravida.min():.2f}, {ox_gravida.max():.2f}]")
+    print(f"Clinical vars — gest_age: [{gest_age.min():.2f}, {gest_age.max():.2f}], "
+          f"maternal_age: [{maternal_age.min():.2f}, {maternal_age.max():.2f}], "
+          f"time_to_birth: [{time_to_birth.min():.2f}, {time_to_birth.max():.2f}]")
     print(f"Any NaN remaining — fhr: {np.isnan(fhr_segments).any()}, "
           f"toco: {np.isnan(toco_segments).any()}, "
           f"clinical: {np.isnan(clinical_vars).any()}")
@@ -238,6 +245,23 @@ def main():
         scheduler.step()
 
         avg_val_loss, val_metrics = validate(model, val_loader, device)
+
+        print(f"\nEpoch {epoch}:")
+        print(f"  Train - Loss: {avg_loss:.4f}")
+        print(f"          Recon: {train_metrics['recon_loss']:.4f}, "
+              f"Var: {train_metrics['var_loss']:.4f}, "
+              f"Feature: {train_metrics['feature_loss']:.4f}")
+        print(f"          VarMAE: {train_metrics['var_mae']:.4f}, "
+              f"FeatureAcc: {train_metrics['feature_acc']:.4f}")
+        print(f"  Val   - Loss: {avg_val_loss:.4f}")
+        print(f"          Recon: {val_metrics['recon_loss']:.4f}, "
+              f"Var: {val_metrics['var_loss']:.4f}, "
+              f"Feature: {val_metrics['feature_loss']:.4f}")
+        print(f"          VarMAE: {val_metrics['var_mae']:.4f}, "
+              f"FeatureAcc: {val_metrics['feature_acc']:.4f}")
+        print(f"  Learned Weights - Recon: {train_metrics['recon_weight']:.4f}, "
+              f"Var: {train_metrics['var_weight']:.4f}, "
+              f"Feature: {train_metrics['feature_weight']:.4f}")
 
         if avg_val_loss < best_val_loss:
             best_val_loss = avg_val_loss
