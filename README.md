@@ -12,6 +12,7 @@ This repositary provide the code for pretraining PRISM-CTG with multi-view self-
 </p>
 
 ## Usage
+We expect your data to have the following input: 
 ### Pre-training Input
 
 A single `.npz` file containing:
