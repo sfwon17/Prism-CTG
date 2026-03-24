@@ -37,7 +37,7 @@ A directory containing:
 
 ### Pre-training
 ```
-python run_pretraining.py --data_path /your_data/data.npz 
+python run_pretraining.py --data_path /YOUR_CTG_DATA/CTG.npz 
 ```
 
 ### Linear-probing
