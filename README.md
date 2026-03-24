@@ -65,7 +65,7 @@ python run_linear_probe.py --checkpoint /YOUR_MODEL/MODEL.pt --data_dir /YOUR_CT
 
 **APHP-CTG**: The APHP-CTG dataset is expected to be made publicly available in 2026, subject to final administrative approval. A link to the official database will be added upon release.
 
-## Notes
+## 📋Notes
 🔥The original research code has been cleaned and simplified to improve readability and reduce implementation complexity. The complete version of the research code can be made available upon request.
 
 🔥We are constantly updating this repository and would be happy to receive and incorporate any feedback. Please do not hesitate to contact us.
