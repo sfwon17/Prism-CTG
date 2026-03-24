@@ -12,7 +12,7 @@ This repositary provide the code for pretraining PRISM-CTG with multi-view self-
 </p>
 
 ## Usage
-PRISM-CTG expect your data to have the following input: 
+PRISM-CTG can be trained on either intrapartum or anteparum CTG, as long as the majority of the patient metadata is available. PRISM-CTG expect your data to have the following input: 
 ### Pre-training Input
 
 A single `.npz` file containing:
