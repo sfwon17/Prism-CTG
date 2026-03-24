@@ -42,10 +42,16 @@ python run_pretraining.py --data_path /YOUR_CTG_DATA/CTG.npz
 ```
 
 ### Linear-probing
+
+We use CLS token as default:
 ```
-python run_linear_probe.py --data_dir /YOUR_CTG_DATA/CTG_DIRECTORY 
+python run_linear_probe.py --checkpoint /YOUR_MODEL/MODEL.pt --data_dir /YOUR_CTG_DATA/CTG_DIRECTORY
 ```
 
+Alternatively, you could use patches for linear-probing:
+```
+python run_linear_probe.py --checkpoint /YOUR_MODEL/MODEL.pt --data_dir /YOUR_CTG_DATA/CTG_DIRECTORY --pooling patches_mean
+```
 ## Dataset
 ### Pretraining
 **Oxford Maternal Databasse (OXMAT)**: Unavailable due to privacy and ethical reason. Individual requests for access may be considered on a case-by-case basis, subject to institutional approval. Please contact gabriel.jones@wrh.ox.ac.uk.
@@ -62,6 +68,9 @@ python run_linear_probe.py --data_dir /YOUR_CTG_DATA/CTG_DIRECTORY
 ## Notes
 The original research code has been cleaned and simplified to improve readability and reduce implementation complexity. The complete version of the research code can be made available upon request.
 
+We are constantly updating this repository and would be happy to receive and incorporate any feedback. Please do not hesitate to contact us.
+
+We also encourage researchers with CTG datasets not currently included here to reach out so we can support further evaluation and also, if necessary, pretraining.
 ## License
 MIT License
 
@@ -73,4 +82,4 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-See MIT LICENSE for details.
+See [MIT LICENSE](https://github.com/mononitogoswami/labelerrors/blob/main/LICENSE) for details.
