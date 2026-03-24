@@ -1,17 +1,17 @@
 # PRISM-CTG
 Traditional deep learning models for CTG analysis are often trained on limited patient cohorts or narrowly curated datasets, which constraints their potential performance. In this study, we introduce the first Foundation Model: PRISM-CTG, pre-trained with a multi-view self-supervised learning framework, specifically designed for CTG domain that incorporates clinical and patient context during pretraining. PRISM-CTG achieved SOTA performance against current SSL and in-domain model architectures across all 7 CTG tasks. We also conducted external validation on datasets from 2 institutions, to mirror real-world deployment without additional fine-tuning, and showed that large-scale in-context pretraining enable better performance. The link to the paper will be added soon!   
 
-## Overview
+## 📝Overview
 This repositary provide the code for pretraining PRISM-CTG with multi-view self-supervised learning framework. Researchers may use the CTU-UHB dataset for experimentation and pipeline validation. However, for meaningful domain representation, the model should be trained on large-scale CTG data. Please replace the dataset with your institution’s data for full-scale pretraining. 
 
-## PRISM-CTG learns meaningful CTG representation
+## 🤝PRISM-CTG learns meaningful CTG representation
 2D-PCA visualisation on Task 4 showed meaningful representation based on the encoder representation alone, without additional linear-probing on the downstream dataset. 
 
 <p align="center">
   <img src="PCA.png" alt="PRISM-CTG learns meaningful CTG representation" width="400">
 </p>
 
-## Usage
+## 👨‍💻Usage
 PRISM-CTG can be trained on either intrapartum or anteparum CTG, as long as the majority of the patient metadata is available. PRISM-CTG expect your data to have the following input: 
 ### Pre-training Input
 
@@ -52,13 +52,13 @@ Alternatively, you could use patches for linear-probing:
 ```
 python run_linear_probe.py --checkpoint /YOUR_MODEL/MODEL.pt --data_dir /YOUR_CTG_DATA/CTG_DIRECTORY --pooling patches_mean
 ```
-## Dataset
-### Pretraining
+## 🏨Dataset
+### 🎯Pretraining
 **Oxford Maternal Databasse (OXMAT)**: Unavailable due to privacy and ethical reason. Individual requests for access may be considered on a case-by-case basis, subject to institutional approval. Please contact gabriel.jones@wrh.ox.ac.uk.
 
 **SPAM**: https://users.ox.ac.uk/~ndog0178/CTGchallenge2017.html
 
-### Evaluation Dataset
+### 🔧Evaluation Dataset
 **Oxmat-2025**: Unavailable due to privacy and ethical reason. Individual requests for access may be considered on a case-by-case basis, subject to institutional approval. Please contact gabriel.jones@wrh.ox.ac.uk.
 
 **CTU-UHB**: https://archive.physionet.org/pn3/ctu-uhb-ctgdb/HEADER.shtml
@@ -66,11 +66,11 @@ python run_linear_probe.py --checkpoint /YOUR_MODEL/MODEL.pt --data_dir /YOUR_CT
 **APHP-CTG**: The APHP-CTG dataset is expected to be made publicly available in 2026, subject to final administrative approval. A link to the official database will be added upon release.
 
 ## Notes
-The original research code has been cleaned and simplified to improve readability and reduce implementation complexity. The complete version of the research code can be made available upon request.
+🔥The original research code has been cleaned and simplified to improve readability and reduce implementation complexity. The complete version of the research code can be made available upon request.
 
-We are constantly updating this repository and would be happy to receive and incorporate any feedback. Please do not hesitate to contact us.
+🔥We are constantly updating this repository and would be happy to receive and incorporate any feedback. Please do not hesitate to contact us.
 
-We also encourage researchers with CTG datasets not currently included here to reach out so we can support further evaluation and also, if necessary, pretraining.
+🔥We also encourage researchers with CTG datasets not currently included here to reach out so we can support further evaluation and also, if necessary, pretraining.
 ## License
 MIT License
 
