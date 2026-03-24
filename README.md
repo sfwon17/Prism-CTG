@@ -42,7 +42,7 @@ python run_pretraining.py --data_path /YOUR_CTG_DATA/CTG.npz
 
 ### Linear-probing
 ```
-python run_linear_probing.py 
+python run_linear_probe.py --data_dir /YOUR_CTG_DATA/CTG_DIRECTORY 
 ```
 
 ## Dataset
