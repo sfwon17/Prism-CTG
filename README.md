@@ -52,6 +52,9 @@ Alternatively, you could use patches for linear-probing:
 ```
 python run_linear_probe.py --checkpoint /YOUR_MODEL/MODEL.pt --data_dir /YOUR_CTG_DATA/CTG_DIRECTORY --pooling patches_mean
 ```
+### CTG Examples
+Researchers could access `Example_data/` for CTG examples.
+
 ## 🏨Dataset
 ### 🎯Pretraining
 **Oxford Maternal Databasse (OXMAT)**: Unavailable due to privacy and ethical reason. Individual requests for access may be considered on a case-by-case basis, subject to institutional approval. Please contact gabriel.jones@wrh.ox.ac.uk.
