@@ -1,4 +1,7 @@
 # PRISM-CTG
+<p align="center">
+  <img src="problem_figure.pdf"  width="400">
+</p>
 Traditional deep learning models for CTG analysis are often trained on limited patient cohorts or narrowly curated datasets, which constraints their potential performance. In this study, we introduce the first Foundation Model: PRISM-CTG, pre-trained with a multi-view self-supervised learning framework, specifically designed for CTG domain that incorporates clinical and patient context during pretraining. PRISM-CTG achieved SOTA performance against current SSL and in-domain model architectures across all 7 CTG tasks. We also conducted external validation on datasets from 2 institutions, to mirror real-world deployment without additional fine-tuning, and showed that large-scale in-context pretraining enable better performance. The link to the paper will be added soon!   
 
 ## 📝Overview
