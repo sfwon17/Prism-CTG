@@ -61,12 +61,12 @@ Researchers could access `Example_data/` for CTG examples.
 
 ## 🏨Dataset
 ### 🎯Pretraining
-**Oxford Maternal Databasse (OXMAT)**: Unavailable due to privacy and ethical reason. Individual requests for access may be considered on a case-by-case basis, subject to institutional approval. Please contact gabriel.jones@wrh.ox.ac.uk.
+**Oxford Maternal Databasse (OXMAT)**: Unavailable due to privacy and ethical reason. Individual requests for access may be considered on a case-by-case basis, subject to institutional approval. Please contact -.
 
 **SPAM**: https://users.ox.ac.uk/~ndog0178/CTGchallenge2017.html
 
 ### 🔧Evaluation Dataset
-**Oxmat-2025**: Unavailable due to privacy and ethical reason. Individual requests for access may be considered on a case-by-case basis, subject to institutional approval. Please contact gabriel.jones@wrh.ox.ac.uk.
+**Oxmat-2025**: Unavailable due to privacy and ethical reason. Individual requests for access may be considered on a case-by-case basis, subject to institutional approval. Please contact -.
 
 **CTU-UHB**: https://archive.physionet.org/pn3/ctu-uhb-ctgdb/HEADER.shtml
 
