@@ -3,7 +3,12 @@
   <img src="problem_statement_fig.png" width="400">
 </p>
 
-Traditional deep learning models for CTG analysis are often trained on limited patient cohorts or narrowly curated datasets, which constraints their potential performance. In this study, we introduce the first Foundation Model: PRISM-CTG, pre-trained with a multi-view self-supervised learning framework, specifically designed for CTG domain that incorporates clinical and patient context during pretraining. PRISM-CTG achieved SOTA performance against current SSL and in-domain model architectures across all 7 CTG tasks. We also conducted external validation on datasets from 2 institutions, to mirror real-world deployment without additional fine-tuning, and showed that large-scale in-context pretraining enable better performance. The link to the paper and the model's weights will be added soon!   
+Traditional deep learning models for CTG analysis are often trained on limited patient cohorts or narrowly curated datasets, which constraints their potential performance. In this study, we introduce the first Foundation Model: PRISM-CTG, pre-trained with a multi-view self-supervised learning framework, specifically designed for CTG domain that incorporates clinical and patient context during pretraining. PRISM-CTG achieved SOTA performance against current SSL and in-domain model architectures across all 7 CTG tasks. We also conducted external validation on datasets from 2 institutions, to mirror real-world deployment without additional fine-tuning, and showed that large-scale in-context pretraining enable better performance. The link to the model's weights will be added soon!   
+
+- Wong, S., Shankar, R., Albert, B., Fei, H., Li, L., M'Barek, I.B., Vatish, M. and Jones, G.D., 2026. PRISM-CTG: A Foundation Model for Cardiotocography Analysis with Multi-View SSL. arXiv preprint arXiv:2605.02917.
+
+## News
+* The paper was accepted at ECML!
 
 ## 📝Overview
 This repositary provide the code for pretraining PRISM-CTG with multi-view self-supervised learning framework. There are currently no large-scale CTG datasets publicly available due to ethical and privacy constraints. Researchers may use the CTU-UHB dataset for experimentation and pipeline validation. However, for meaningful domain representation, the model should be trained on large-scale CTG data. Please replace the dataset with your institution’s data for full-scale pretraining. 
