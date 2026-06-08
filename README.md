@@ -8,7 +8,7 @@ Traditional deep learning models for CTG analysis are often trained on limited p
 - Wong, S., Shankar, R., Albert, B., Fei, H., Li, L., M'Barek, I.B., Vatish, M. and Jones, G.D., 2026. PRISM-CTG: A Foundation Model for Cardiotocography Analysis with Multi-View SSL. arXiv preprint arXiv:2605.02917.
 
 ## News
-* The paper was accepted at ECML!
+* The paper was accepted at ECML! 💥💥💥
 
 ## 📝Overview
 This repositary provide the code for pretraining PRISM-CTG with multi-view self-supervised learning framework. There are currently no large-scale CTG datasets publicly available due to ethical and privacy constraints. Researchers may use the CTU-UHB dataset for experimentation and pipeline validation. However, for meaningful domain representation, the model should be trained on large-scale CTG data. Please replace the dataset with your institution’s data for full-scale pretraining. 
