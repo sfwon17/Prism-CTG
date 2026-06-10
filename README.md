@@ -11,7 +11,7 @@ Traditional deep learning models for CTG analysis are often trained on limited p
 * The paper was accepted at ECML! 💥💥💥
 
 ## 📝Overview
-This repositary provide the code for pretraining PRISM-CTG with multi-view self-supervised learning framework. There are currently no large-scale CTG datasets publicly available due to ethical and privacy constraints. Researchers may use the CTU-UHB dataset for experimentation and pipeline validation. However, for meaningful domain representation, the model should be trained on large-scale CTG data. Please replace the dataset with your institution’s data for full-scale pretraining. 
+This repositary provide the code for pretraining PRISM-CTG with multi-view self-supervised learning framework. There are currently no large-scale CTG datasets publicly available due to ethical and privacy constraints. It is relatively lightweight and can be trained and deployed on a single consumer-grade GPU with 6 GB of memory. Researchers may use the CTU-UHB dataset for experimentation and pipeline validation. However, for meaningful domain representation, the model should be trained on large-scale CTG data. Please replace the dataset with your institution’s data for full-scale pretraining. 
 
 ## 🤝PRISM-CTG learns meaningful CTG representation
 2D-PCA visualisation on Task 4 showed meaningful representation based on the encoder representation alone, without additional linear-probing on the downstream dataset. 
@@ -63,6 +63,9 @@ python run_linear_probe.py --checkpoint /YOUR_MODEL/MODEL.pt --data_dir /YOUR_CT
 ```
 ### CTG Examples
 Researchers could access `Example_data/` for CTG examples.
+
+### Computational Details 
+The pretraining stage involved approximately 8.3 million trainable parameters and required about 8 hours on an NVIDIA RTX 5090 or 10 hours on an NVIDIA 4090 for 250,000 hours of CTG data.
 
 ## 🏨Dataset
 ### 🎯Pretraining
