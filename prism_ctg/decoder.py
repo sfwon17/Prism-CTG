@@ -3,8 +3,8 @@ import math
 import torch
 import torch.nn as nn
 
-from .attention import PatchCLSCrossAttention
-from .transformer import TransformerBlock
+from attention import PatchCLSCrossAttention
+from transformer import TransformerBlock
 
 
 class DecoderWithHints(nn.Module):
