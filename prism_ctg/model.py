@@ -3,22 +3,35 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 from config import ModelConfig
-from modules import (
+
+from backbone import (
     CNNBackbone,
-    CLSCrossAttention,
-    DecoderWithHints,
-    FeatureLabelHead,
-    FeatureTokenizer,
-    MAEMasking,
-    PatchCLSCrossAttention,
     PatchEmbedding,
-    PatchFeatureExtractor,
-    Patchify,
     PositionalEncoding,
-    RawPatchify,
-    SignalTokenizer,
-    TransformerEncoder,
+)
+from attention import (
+    CLSCrossAttention,
+    PatchCLSCrossAttention,
+)
+from decoder import (
+    DecoderWithHints,
+)
+from heads import (
+    FeatureLabelHead,
     VarPredictionHead,
+)
+from tokenizers import (
+    FeatureTokenizer,
+    SignalTokenizer,
+    PatchFeatureExtractor,
+)
+from masking import (
+    MAEMasking,
+    RawPatchify,
+    Patchify,
+)
+from transformer import (
+    TransformerEncoder,
     create_cls_isolation_mask,
 )
 
